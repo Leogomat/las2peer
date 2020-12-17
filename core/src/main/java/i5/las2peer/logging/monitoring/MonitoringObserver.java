@@ -70,7 +70,7 @@ public class MonitoringObserver implements NodeObserver {
 						if (messagesCount > 0) {
 							checkInit();
 							// Send messages after waitUntilSend ms
-							if (initializedDone) {
+							if (initializedDone && readyForInitializing) {
 								// Do not send old messages...
 								int counter = messagesCount;
 								while (counter < monitoringMessages.length) {
